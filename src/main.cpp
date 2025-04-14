@@ -1,3 +1,5 @@
+#include "antiGLFW_lib.h"
+
 
 //############################################
 //              Platform Global
@@ -18,6 +20,7 @@ void platform_update_window();
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
 #define NOMINMAX
+//what is nominmax
 #include <Windows.h>
 
 //############################################
@@ -106,11 +109,15 @@ void platform_update_window(){
 
 int main(){
    //i cant do this in vscode?? cout<<"hello"<<endl;
+    //cout<<"hello"<<endl;
 
     platform_create_window(1280, 720, "openGL");
     
     while(running){
         platform_update_window();
+        SM_TRACE("TEST");
+        SM_WARN("WARN");
+        SM_ERROR("ERROR");
     }
     return 0;
 }
